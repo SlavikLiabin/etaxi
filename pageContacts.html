@@ -12,21 +12,21 @@
   <body>
     <header id="header-section">
       <div class="container">
-        <div class="actual-city">
-          <div class="actual-city-top">
-              <figure class="city-img-actual">
-                  <img src="img/location_city.svg" alt="location icon">
-              </figure>
-              <h4 class="city-text">Ваш город <span class="your-city">Иркутск</span>?</h4>
+          <div class="actual-city">
+              <div class="actual-city-top">
+                  <figure class="city-img-actual">
+                      <img src="img/location_city.svg" alt="location icon">
+                  </figure>
+                  <h4 class="city-text">Ваш город <span class="your-city">Иркутск</span>?</h4>
+              </div>
+              <div class="actual-city-bottom">
+                  <button class="button actual-city__button actual-city__button--yellow">Всё верно</button>
+                  <button class="actual-city__button actual-city__button--white">Выбрать город</button>
+              </div>
           </div>
-          <div class="actual-city-bottom">
-              <button class="button actual-city__button actual-city__button--yellow">Всё верно</button>
-              <button class="actual-city__button actual-city__button--white">Выбрать город</button>
-          </div>
-      </div>
           <div class="header">
               <div class="header-logo">
-                  <img class="header-logo__img" src="img/logo.svg" alt="etaxi logo">
+                  <a href="index.html"><img class="header-logo__img" src="img/logo.svg" alt="etaxi logo"></a>
               </div>
               <div class="header-description">
                   <div class="header-top">
@@ -49,11 +49,11 @@
                   <div class="header-bottom">
                       <nav class="header-nav">
                           <ul class="header-nav-list">
-                              <li class="header-nav__item"><a class="header-nav__link" href="index.html#catalog">Каталог</a></li>
+                              <li class="header-nav__item"><a class="header-nav__link" href="#catalog">Каталог</a></li>
                               <li class="header-nav__item"><a class="header-nav__link" href="pageAboutUs.html">О нас</a></li>
-                              <li class="header-nav__item"><a class="header-nav__link" href="index.html#rent">Условия аренды</a></li>
-                              <li class="header-nav__item"><a class="header-nav__link" href="index.html#reviews">Отзывы</a></li>
-                              <li class="header-nav__item"><a class="header-nav__link" href="index.html#contacts">Контакты</a></li>
+                              <li class="header-nav__item"><a class="header-nav__link" href="#rent">Условия аренды</a></li>
+                              <li class="header-nav__item"><a class="header-nav__link" href="#reviews">Отзывы</a></li>
+                              <li class="header-nav__item"><a class="header-nav__link" href="#contacts">Контакты</a></li>
                           </ul>
                       </nav>
                       <button class="button header-nav__button">Оставить заявку</button>
@@ -61,13 +61,13 @@
               </div>
           </div>
        </div>   
-  </header>
+    </header>
     <main id="main-section">
       <form class="application-form" action="index.html" method="post">
         <figure class="application-close">
             <img src="img/close-form.svg">
         </figure>
-        <h2 class="application-subtitle">Оставите заявку</h2>
+        <h2 class="application-subtitle">Оставьте заявку</h2>
         <h3 class="application-text">Первый день аренды авто бесплатно!</h3>
         <input class="application-input" type="text" name="name" placeholder="Ваше имя" required></input>
         <input class="application-input" type="tel" name="tel" placeholder="+7 (999) 999-99-99" required></input>
@@ -115,15 +115,40 @@
                 <div class="popUp__item">Улан-Удэ</div>
             </div>
         </div>
-      </div>
+    </div>
       <div class="container">
+        <div class="return">
+          <a class="returnToMainPage" href="index.html">Главная</a>
+          <span>/</span>
+          <span class="pageContact">Контакты</span>
+        </div>
         <section class="main-contacts__section" id="contacts">
           <div class="main__title-select">
             <h3 class="main__title">Контакты в Иркутске</h3>
-            <span class="header-cityAbout">Иркутск</span>
-            <figure class="header-expandMoreAbout">
-                <img src="img/expand_more.svg" alt="expand_more">
-            </figure>
+            <div class="dropDown">
+              <div class="dropDown-selectCity">
+                <div class="dropDown-city">Иркутск</div>
+                <figure class="dropDown-img-down">
+                  <img src="img/dropDown_Down.svg" alt="expand more">
+                </figure>
+                <figure class="dropDown-img-up">
+                  <img src="img/dropDown_Up.svg" alt="expand more">
+                </figure>
+              </div>
+              <div class="dropDown-list">
+                      <div class="dropDown__item">Иркутск</div>
+                      <div class="dropDown__item">Барнаул</div>
+                      <div class="dropDown__item">Екатеринбург</div>
+                      <div class="dropDown__item">Кемерово</div>
+                      <div class="dropDown__item">Красноярск</div>
+                      <div class="dropDown__item">Новосибирск</div>
+                      <div class="dropDown__item">Новокузнецк</div>
+                      <div class="dropDown__item">Омск</div>
+                      <div class="dropDown__item">Томск</div>
+                      <div class="dropDown__item">Тюмень</div>
+                      <div class="dropDown__item">Улан-Удэ</div>
+              </div>
+            </div>
           </div>
           <div class="main__map">
             <iframe src="https://yandex.ru/map-widget/v1/?um=constructor%3A4b8508d7139b2b61ed46cca9745440083eb5f0d9aa895c218d5b868aa1f1984a&amp;source=constructor" 
@@ -214,7 +239,7 @@
         <div class="footer-inner">
           <div class="footer-up">
             <div class="footer-logo">
-              <img class="footer-logo__img" src="img/logo.svg" alt="etaxi logo">
+              <a href="index.html"><img class="footer-logo__img" src="img/logo.svg" alt="etaxi logo"></a>
             </div>
             <div class="footer-phone-social">
               <a class="footer-phone" href="tel:+73822984033">+7 (382) 298-40-33</a>
@@ -222,7 +247,7 @@
                 <a href="https://web.telegram.org/a/#970433058" target="_blank">
                   <img src="img/Telegram.svg" alt="Telegram">
                 </a>
-                <a href="https://www.youtube.com/channel/UCGadPlvl5Eq5b1NHnGs5m0w">
+                <a href="https://www.youtube.com/channel/UCGadPlvl5Eq5b1NHnGs5m0w" target="_blank">
                   <img src="img/Youtube.svg" alt="Youtube">
                 </a>
                 <a href="https://vk.com/etaxidriver" target="_blank">
@@ -236,16 +261,16 @@
             <nav class="nav-footer">
               <ul class="nav-list">
                 <li class="nav__item-footer">
-                  <a class="nav__link-footer" href="index.html#catalog">Каталог</a>
+                  <a class="nav__link-footer" href="#catalog">Каталог</a>
                 </li>
                 <li class="nav__item-footer">
                   <a class="nav__link-footer" href="pageAboutUs.html#about">О нас</a>
                 </li>
                 <li class="nav__item-footer">
-                  <a class="nav__link-footer" href="index.html#rent">Условия аренды</a>
+                  <a class="nav__link-footer" href="#rent">Условия аренды</a>
                 </li>
                 <li class="nav__item-footer">
-                  <a class="nav__link-footer" href="index.html#reviews">Отзывы</a>
+                  <a class="nav__link-footer" href="#reviews">Отзывы</a>
                 </li>
                 <li class="nav__item-footer">
                   <a class="nav__link-footer" href="#contacts">Контакты</a>
@@ -256,7 +281,7 @@
           </div>
         </div>
       </div>
-    </footer>
+  </footer>
     <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
     <script src="appContacts.js"></script>
   </body>

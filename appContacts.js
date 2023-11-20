@@ -50,23 +50,21 @@ trueButton.addEventListener("click",closeSlectCity)
 falseButton.addEventListener("click",closeSlectCity)
 falseButton.addEventListener("click",showPopUp)
 
+
+
 function closeSlectCity() {
   actualCity.style.display = "none";
 }
 
-const showExpandAbout = document.querySelector(".header-cityAbout");
-const showCityAbout = document.querySelector(".header-expandMoreAbout");
-
-showExpandAbout.addEventListener("click",showPopUp)
-showCityAbout.addEventListener("click",showPopUp)
-
 /*Show-hidden popUp*/
+const dropDownSelectCity = document.querySelector(".dropDown-selectCity");
 const popUp = document.querySelector(".popUp");
 
 function showPopUp() {
   popUp.style.display = "block";
   header.style.position = "relative";
   header.style.backgroundColor =  'rgba(0, 0, 0, 0.01)';
+  dropDownSelectCity.style.backgroundColor =  'rgba(0, 0, 0, 0.01)';
   body.style.backgroundColor =  'rgba(0, 0, 0, 0.1)';
 }
 
@@ -78,14 +76,52 @@ function closePopUp() {
   popUp.style.display = "none";
   header.style.position = "sticky";
   header.style.backgroundColor =  '#FFF';
+  dropDownSelectCity.style.backgroundColor =  '#FFF';
   body.style.backgroundColor =  '#FFF';
+  headerCity.innerHTML = popUpCity.value;
+  dropDownCity.innerHTML = popUpCity.value;
+  popUpCity.value = content;
 }
 
 
 /*Извлечение города в popUp*/
+const headerCity = document.querySelector('.header-city')
 const popUpCity = document.querySelector('.popUp-city')
 const popUpList = document.querySelector('.popUp-list').addEventListener('click', e => {
 let content = e.target.innerHTML;
 popUpCity.value = content;
 });
+
+
+
+/*Show-hidden dropDown*/
+
+const dropDownOpen = document.querySelector(".dropDown-img-down");
+const dropDownClose = document.querySelector(".dropDown-img-up");
+const dropDownList = document.querySelector(".dropDown-list");
+
+dropDownOpen.addEventListener("click",openDropDown)
+
+function openDropDown() {
+  dropDownOpen.style.display = "none";
+  dropDownClose.style.display = "block";
+  dropDownList.style.display = "block";
+}
+
+dropDownClose.addEventListener("click",closeDropDown)
+
+function closeDropDown() {
+  dropDownClose.style.display = "none";
+  dropDownOpen.style.display = "block";
+  dropDownList.style.display = "none";
+}
+
+/*Извлечение города в dropDown*/
+const dropDownCity = document.querySelector(".dropDown-city");
+dropDownList.addEventListener("click", (e) => {
+    let content2 = e.target.innerHTML;
+    dropDownCity.innerHTML = content2;
+  });
+
+
 

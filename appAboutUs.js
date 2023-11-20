@@ -12,8 +12,8 @@ let dotIndex = 0;
 let linkIndex = dotIndex;
 
 const nextSlide = () => {
-  if (position < (dots.length - 1) * 408) {
-    position += 408;
+  if (position < (dots.length - 1) * 398) {
+    position += 398;
   } else {
     position = 0;
   }
@@ -37,9 +37,9 @@ const nextSlideText = () => {
 
 const prevSlide = () => {
   if (position > 0) {
-    position -= 408;
+    position -= 398;
   } else {
-    position = (dots.length - 1) * 408;
+    position = (dots.length - 1) * 398;
   }
   sliderLine.style.left = -position + "px";
   thisSlide(dotIndex);
@@ -105,16 +105,14 @@ prevButton.addEventListener("click", prevSlideText);
 //   });
 // });
 
-
 /*Кастомный селект*/
 
 const element = document.querySelector(".main-select");
 const choices = new Choices(element, {
-    searchEnabled: false,
-    itemSelectText: "",
-    noResultsText: 'По Вашему запросу ничего не найдено',
-})
-
+  searchEnabled: false,
+  itemSelectText: "",
+  noResultsText: "По Вашему запросу ничего не найдено",
+});
 
 /*Show-hidden mainForm*/
 const showButtonHeader = document.querySelector(".header-nav__button");
@@ -123,24 +121,23 @@ const applicationForm = document.querySelector(".application-form");
 const body = document.querySelector("body");
 const header = document.querySelector("#header-section");
 
-showButtonHeader.addEventListener("click", showForm)
+showButtonHeader.addEventListener("click", showForm);
 
 function showForm() {
   header.style.position = "relative";
-  header.style.backgroundColor =  'rgba(0, 0, 0, 0.01)';
-  body.style.backgroundColor =  'rgba(0, 0, 0, 0.1)';
+  header.style.backgroundColor = "rgba(0, 0, 0, 0.01)";
+  body.style.backgroundColor = "rgba(0, 0, 0, 0.1)";
   applicationForm.style.display = "flex";
 }
 
-closeButton.addEventListener("click", hiddenForm)
+closeButton.addEventListener("click", hiddenForm);
 
 function hiddenForm() {
   header.style.position = "sticky";
-  header.style.backgroundColor =  '#FFF';
-  body.style.backgroundColor =  '#FFF';
+  header.style.backgroundColor = "#FFF";
+  body.style.backgroundColor = "#FFF";
   applicationForm.style.display = "none";
 }
-
 
 /*Show-hidden cityForm*/
 const showExpand = document.querySelector(".header-expandMore");
@@ -183,18 +180,17 @@ function closePopUp() {
   header.style.position = "sticky";
   header.style.backgroundColor =  '#FFF';
   body.style.backgroundColor =  '#FFF';
+  headerCity.innerHTML = popUpCity.value;
 }
 
 
 /*Извлечение города в popUp*/
+const headerCity = document.querySelector('.header-city')
 const popUpCity = document.querySelector('.popUp-city')
 const popUpList = document.querySelector('.popUp-list').addEventListener('click', e => {
 let content = e.target.innerHTML;
 popUpCity.value = content;
 });
-
-
-
 /*Скрытие кнопки*/
 /*
 const activeVideoAboutUs = document.querySelector(".video-aboutUs");
@@ -206,7 +202,3 @@ function toggleStateVideo() {
   btnPlay.style.display = btnPlay.style.display === 'none' ? 'block' : 'none';
 }
 */
-
-
-
-

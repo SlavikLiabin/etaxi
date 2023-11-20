@@ -12,21 +12,21 @@
   <body>
     <header id="header-section">
       <div class="container">
-        <div class="actual-city">
-          <div class="actual-city-top">
-              <figure class="city-img-actual">
-                  <img src="img/location_city.svg" alt="location icon">
-              </figure>
-              <h4 class="city-text">Ваш город <span class="your-city">Иркутск</span>?</h4>
+          <div class="actual-city">
+              <div class="actual-city-top">
+                  <figure class="city-img-actual">
+                      <img src="img/location_city.svg" alt="location icon">
+                  </figure>
+                  <h4 class="city-text">Ваш город <span class="your-city">Иркутск</span>?</h4>
+              </div>
+              <div class="actual-city-bottom">
+                  <button class="button actual-city__button actual-city__button--yellow">Всё верно</button>
+                  <button class="actual-city__button actual-city__button--white">Выбрать город</button>
+              </div>
           </div>
-          <div class="actual-city-bottom">
-              <button class="button actual-city__button actual-city__button--yellow">Всё верно</button>
-              <button class="actual-city__button actual-city__button--white">Выбрать город</button>
-          </div>
-      </div>
           <div class="header">
               <div class="header-logo">
-                  <img class="header-logo__img" src="img/logo.svg" alt="etaxi logo">
+                  <a href="index.html"><img class="header-logo__img" src="img/logo.svg" alt="etaxi logo"></a>
               </div>
               <div class="header-description">
                   <div class="header-top">
@@ -53,7 +53,7 @@
                               <li class="header-nav__item"><a class="header-nav__link" href="pageAboutUs.html">О нас</a></li>
                               <li class="header-nav__item"><a class="header-nav__link" href="index.html#rent">Условия аренды</a></li>
                               <li class="header-nav__item"><a class="header-nav__link" href="index.html#reviews">Отзывы</a></li>
-                              <li class="header-nav__item"><a class="header-nav__link" href="index.html#contacts">Контакты</a></li>
+                              <li class="header-nav__item"><a class="header-nav__link" href="pageContacts.html#contacts">Контакты</a></li>
                           </ul>
                       </nav>
                       <button class="button header-nav__button">Оставить заявку</button>
@@ -67,7 +67,7 @@
         <figure class="application-close">
             <img src="img/close-form.svg">
         </figure>
-        <h2 class="application-subtitle">Оставите заявку</h2>
+        <h2 class="application-subtitle">Оставьте заявку</h2>
         <h3 class="application-text">Первый день аренды авто бесплатно!</h3>
         <input class="application-input" type="text" name="name" placeholder="Ваше имя" required></input>
         <input class="application-input" type="tel" name="tel" placeholder="+7 (999) 999-99-99" required></input>
@@ -117,6 +117,11 @@
         </div>
       </div>
       <div class="container">
+        <div class="return">
+          <a class="returnToMainPage" href="index.html">Главная</a>
+          <span>/</span>
+          <span class="pageAbout">О нас</span>
+        </div>
         <section class="aboutUs">
             <h3 class="main__title">О нас</h3>
             <div class="main__video-slogan">
@@ -143,7 +148,7 @@
             </div>
         </section>
         <section class="ourTeam">
-          <h3 class="ourTeam__title">Наша команда</h3>
+          <h3 class="main__title">Наша команда</h3>
           <div class="section2">
             <div class="section2__inner">
               <div class="section2__top">
@@ -224,7 +229,7 @@
         </section>
         <section class="work-algorithm">
             <div class="work-algorithm-inner">
-              <h3 class="work-algorithm-inner__title">Как мы работаем</h3>
+              <h3 class="main__title">Как мы работаем</h3>
               <p class="faq">Часто задаваемые вопросы</p>
               
               <div class="faq-list">
@@ -313,7 +318,7 @@
       <div class="footer-inner">
         <div class="footer-up">
           <div class="footer-logo">
-            <img class="footer-logo__img" src="img/logo.svg" alt="etaxi logo">
+            <a href="index.html"><img class="footer-logo__img" src="img/logo.svg" alt="etaxi logo"></a>
           </div>
           <div class="footer-phone-social">
             <a class="footer-phone" href="tel:+73822984033">+7 (382) 298-40-33</a>
@@ -338,7 +343,7 @@
                 <a class="nav__link-footer" href="index.html#catalog">Каталог</a>
               </li>
               <li class="nav__item-footer">
-                <a class="nav__link-footer" href="pageAnoutUs.html">О нас</a>
+                <a class="nav__link-footer" href="pageAboutUs.html#about">О нас</a>
               </li>
               <li class="nav__item-footer">
                 <a class="nav__link-footer" href="index.html#rent">Условия аренды</a>
@@ -347,7 +352,7 @@
                 <a class="nav__link-footer" href="index.html#reviews">Отзывы</a>
               </li>
               <li class="nav__item-footer">
-                <a class="nav__link-footer" href="pageContacts.html">Контакты</a>
+                <a class="nav__link-footer" href="pageContacts.html#contacts">Контакты</a>
               </li>
             </ul>
           </nav>
@@ -355,7 +360,7 @@
         </div>
       </div>
     </div>
-  </footer>
+</footer>
     <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
     <script src="appAboutUs.js"></script>
   </body>

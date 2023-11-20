@@ -76,10 +76,12 @@ function closePopUp() {
   header.style.position = "sticky";
   header.style.backgroundColor =  '#FFF';
   body.style.backgroundColor =  '#FFF';
+  headerCity.innerHTML = popUpCity.value;
 }
 
 
 /*Извлечение города в popUp*/
+const headerCity = document.querySelector('.header-city')
 const popUpCity = document.querySelector('.popUp-city')
 const popUpList = document.querySelector('.popUp-list').addEventListener('click', e => {
 let content = e.target.innerHTML;
