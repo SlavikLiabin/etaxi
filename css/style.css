@@ -3,10 +3,6 @@
     src: url(../fonts/blisspro_medium.woff2);
 }
 
-@font-face {
-    font-family: "Inter";
-    src: url(../fonts/Inter-SemiBold);
-}
 
 * {
     box-sizing: border-box;
@@ -59,11 +55,11 @@ button {
 }
 
 .subtitle {
-    font-family: "Inter";
+    font-family: inherit;
     font-size: 20px;
     line-height: 28px;
     margin-bottom: 8px;
-    font-weight: 600;
+    font-weight: 700;
 }
 
 .text {
@@ -442,7 +438,6 @@ img {
 }
 
 .catalog-subtitle {
-    font-family: "Inter";
     text-align: center;
     font-size: 20px;
     line-height: 28px;
@@ -1008,7 +1003,6 @@ iframe {
 /*Forma*/
 .application-form {
     display: none;
-    /*display: none;*/
     flex-direction: column;
     position: fixed;
     z-index: 4;
@@ -1018,7 +1012,7 @@ iframe {
     margin-left: -218px;
     background-color: white;
     width: 437px;
-    height: auto;
+    height: 484px;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
     border-radius: 10px;
     padding: 40px;
@@ -1051,6 +1045,8 @@ iframe {
 }
   
 .application-input {
+    display: flex;
+    flex-shrink: 0;
     width: auto;
     height: 56px;
     border-radius: 12px;
@@ -1087,104 +1083,103 @@ iframe {
 }
 
 /*CustomSelect*/
-
-/*Ширина input*/
-.choices {
-    width: 357px;
-}
-
-/*input при нажатии*/
-.choices.is-open {
-    border-radius: 12px;
-}
-
-/*Отображение стрелочки expand more при разворачивании списка вниз*/
-.choices[data-type*=select-one]:after {
-    height: 8px;
-    width: 8px;
-    z-index: 3;
-    top: 45%;
-    border: 1px solid #222;
-    border-width: 0 0 1px 1px;
-    transform: rotate(-45deg);
-    margin-right: 10px;
-}
-
-/*Отображение стрелочки expand more при разворачивании списка ввкрх*/
-.choices[data-type*=select-one].is-open:after {
-    top: 65%;
-    border: 1px solid #222;
-    border-width: 1px 1px 0 0;
-    margin-right: 10px;
-}
-
-/*input*/
-.choices__inner {
-    position: relative;
-    z-index: 2;
-    height: 56px;
+.dropDown-main-selectCity {
+    display: flex;
+    justify-content: space-between;
     background-color: #FFF;
+    margin-bottom: 24px;
     border-radius: 12px;
-    padding: 7.5px 0;
+    border: 1px solid  #CBCCCE;
 }
 
-/*блок элемента в input*/
-.choices__list--single {
-    padding: 8px 0px 4px 0px;
-}
 
-.choices__placeholder {
-    opacity: 1;
-}
-
-/*форма input при нажатии*/
-.is-focused .choices__inner,
-.is-open .choices__inner {
-    border: 1px solid #FDB913;
+.dropDown-main-city {
+    width: 357px;
+    height: 56px;
     border-radius: 12px;
-}
-
-
-
-/*Выбранный элемент в input*/
-.choices__list--single .choices__item {
-    color: #222;
-    font-family: inherit;
+    background: #FFF;
+    outline: none;
+    color:  #222;
+    font-family: 'BlissPro';
     font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
     line-height: 24px; 
-    padding-left: 20px;
-}
-
-/*Отображение Выберите город*/
-.choices__list--dropdown .choices__placeholder {
-    display: none;
-}
-
-/*Выпадающий список*/
-.choices__list--dropdown {
-    top: calc(100% + 24px);
-    height: 530px;
+    padding: 16px 20px;
+    position: relative;
     border: none;
-    border-radius: 12px;
-    background:  #FFF;
+}
+
+.dropDown-main-city::placeholder {
+    color:  #AAA;
+    font-family: 'BlissPro';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 400;
+    line-height: 24px; 
+}
+
+.dropDown-main-img-down, .dropDown-main-img-up {
+    right: 40px;
+    position: absolute;
+    margin-top: 16px;
+    width: 24px;
+    height: 24px;
+    cursor: pointer;
+    margin-right: 20px;
+}
+
+.dropDown-main-img-up {
+    display: none;
+  }
+
+.dropDown-main-list {
+    display: none;
+    width: 357px;
+    height: 240px;
+    background-color: #FFF;
+    border-radius: 10px;
     box-shadow: 0px 4px 16px 0px rgba(0, 0, 0, 0.08);
+    margin-bottom: 24px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
-
-/*Выпадающий список*/
-.choices__list--dropdown .choices__list {
-    max-height: 530px;
+/*Ширина полосы прокрутки*/
+.dropDown-main-list::-webkit-scrollbar, .popUp-list::-webkit-scrollbar {
+    width: 10px;
+    background-color: #FFF;
 }
 
-/*Элементы выпадающего списка*/
-.choices__list--dropdown .choices__item--selectable {
+ /*Ползунок*/ 
+.dropDown-main-list::-webkit-scrollbar-thumb, .popUp-list::-webkit-scrollbar-thumb  {
+    border-radius: 10px;
+    background-color:  #E6E6E6;
+}
+  
+/*Полоса прокрутки*/
+.dropDown-main-list::-webkit-scrollbar-track, .popUp-list::-webkit-scrollbar  {
+    -webkit-box-shadow: inset 0 0 6px rgba(0,0,0,0.2);
+    border-radius: 10px;
+    background-color: #FFF;
+}
+
+  
+.dropDown-main__item {
+    display: flex;
+    align-items: center;
     color: #5E5E5E;
-    padding-left: 20px;
+    font-family: 'BlissPro';
+    font-size: 16px;
+    font-style: normal;
+    font-weight: 500;
+    line-height: 24px; 
     height: 48px;
+    padding: 0 20px;
+    cursor: pointer;
 }
-
-/*Элементы выпадающего списка при hover*/
-.choices__list--dropdown .choices__item--selectable:hover {
+  
+.dropDown-main__item:hover {
     color: #222;
     background-color: #E6E6E6;
 }
@@ -1266,7 +1261,7 @@ iframe {
     margin-top: -242px;
     margin-left: -150px;
     width: 300px;
-    height: 668px;
+    height: 360px;
     padding: 20px 0;
     border-radius: 10px;
     background: var(--White, #FFF);
@@ -1324,11 +1319,14 @@ iframe {
     right: 32px;
     width: 24px;
     height: 24px;
+    cursor: pointer;
 }
 
 .popUp-list {
     max-width: 300px;
-    height: 528px;
+    height: 240px;
+    overflow-y: scroll;
+    scrollbar-width: thin;
 }
 
 .popUp__item {
@@ -1486,6 +1484,7 @@ iframe {
   .gallery-item-3 .reviews-text {
     display: block;
   }
+
 
   .btn-play {
     /*display:block;*/

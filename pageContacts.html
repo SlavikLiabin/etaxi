@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>etaxi Contacts</title>
     <link rel="stylesheet" href="css/reset.css" />
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
     <link rel="stylesheet" href="css/style.css" />
     <link rel="stylesheet" href="css/styleContacts.css" />
   </head>
@@ -71,20 +70,30 @@
         <h3 class="application-text">Первый день аренды авто бесплатно!</h3>
         <input class="application-input" type="text" name="name" placeholder="Ваше имя" required></input>
         <input class="application-input" type="tel" name="tel" placeholder="+7 (999) 999-99-99" required></input>
-        <select class="main-select" name="city">
-          <option value="" selected>Выберите город</option>
-          <option value="Irkutsk">Иркутск</option>
-          <option value="Barnaul">Барнаул</option>
-          <option value="Ekaterinburg">Екатеринбург</option>
-          <option value="Kemerovo">Кемерово</option>
-          <option value="Krasnoiarsk">Красноярск</option>
-          <option value="Novosibirsk">Новосибирск</option>
-          <option value="Novokuznetsk">Новокузнецк</option>
-          <option value="Omsk">Омск</option>
-          <option value="Tomsk">Томск</option>
-          <option value="Tiumen">Тюмень</option>
-          <option value="Ulan-Ude">Улан-Удэ</option>
-      </select>
+        <div class="dropDown-main">
+            <div class="dropDown-main-selectCity">
+              <input class="dropDown-main-city" placeholder="Выберите город"></input>
+              <figure class="dropDown-main-img-down">
+                <img src="img/dropDown_Down.svg" alt="expand more">
+              </figure>
+              <figure class="dropDown-main-img-up">
+                <img src="img/dropDown_Up.svg" alt="expand more">
+              </figure>
+            </div>
+            <div class="dropDown-main-list">
+                    <div class="dropDown-main__item">Иркутск</div>
+                    <div class="dropDown-main__item">Барнаул</div>
+                    <div class="dropDown-main__item">Екатеринбург</div>
+                    <div class="dropDown-main__item">Кемерово</div>
+                    <div class="dropDown-main__item">Красноярск</div>
+                    <div class="dropDown-main__item">Новосибирск</div>
+                    <div class="dropDown-main__item">Новокузнецк</div>
+                    <div class="dropDown-main__item">Омск</div>
+                    <div class="dropDown-main__item">Томск</div>
+                    <div class="dropDown-main__item">Тюмень</div>
+                    <div class="dropDown-main__item">Улан-Удэ</div>
+            </div>
+          </div>
         <button class="button application-button">Оставить заявку</button>
         <div class="application-checkbox">
             <input class="custom-checkbox" type="checkbox" id="confirmation" name="confirmation"/>
@@ -115,7 +124,7 @@
                 <div class="popUp__item">Улан-Удэ</div>
             </div>
         </div>
-    </div>
+      </div>
       <div class="container">
         <div class="return">
           <a class="returnToMainPage" href="index.html">Главная</a>
@@ -125,28 +134,28 @@
         <section class="main-contacts__section" id="contacts">
           <div class="main__title-select">
             <h3 class="main__title">Контакты в Иркутске</h3>
-            <div class="dropDown">
-              <div class="dropDown-selectCity">
-                <div class="dropDown-city">Иркутск</div>
-                <figure class="dropDown-img-down">
+            <div class="dropDown-contacts">
+              <div class="dropDown-contacts-selectCity">
+                <div class="dropDown-contacts-city">Иркутск</div>
+                <figure class="dropDown-contacts-img-down">
                   <img src="img/dropDown_Down.svg" alt="expand more">
                 </figure>
-                <figure class="dropDown-img-up">
+                <figure class="dropDown-contacts-img-up">
                   <img src="img/dropDown_Up.svg" alt="expand more">
                 </figure>
               </div>
-              <div class="dropDown-list">
-                      <div class="dropDown__item">Иркутск</div>
-                      <div class="dropDown__item">Барнаул</div>
-                      <div class="dropDown__item">Екатеринбург</div>
-                      <div class="dropDown__item">Кемерово</div>
-                      <div class="dropDown__item">Красноярск</div>
-                      <div class="dropDown__item">Новосибирск</div>
-                      <div class="dropDown__item">Новокузнецк</div>
-                      <div class="dropDown__item">Омск</div>
-                      <div class="dropDown__item">Томск</div>
-                      <div class="dropDown__item">Тюмень</div>
-                      <div class="dropDown__item">Улан-Удэ</div>
+              <div class="dropDown-contacts-list">
+                      <div class="dropDown-contacts__item">Иркутск</div>
+                      <div class="dropDown-contacts__item">Барнаул</div>
+                      <div class="dropDown-contacts__item">Екатеринбург</div>
+                      <div class="dropDown-contacts__item">Кемерово</div>
+                      <div class="dropDown-contacts__item">Красноярск</div>
+                      <div class="dropDown-contacts__item">Новосибирск</div>
+                      <div class="dropDown-contacts__item">Новокузнецк</div>
+                      <div class="dropDown-contacts__item">Омск</div>
+                      <div class="dropDown-contacts__item">Томск</div>
+                      <div class="dropDown-contacts__item">Тюмень</div>
+                      <div class="dropDown-contacts__item">Улан-Удэ</div>
               </div>
             </div>
           </div>
@@ -282,7 +291,7 @@
         </div>
       </div>
   </footer>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
     <script src="appContacts.js"></script>
+    <script src="dropDownContacts.js"></script>
   </body>
 </html>

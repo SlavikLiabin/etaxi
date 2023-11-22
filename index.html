@@ -5,7 +5,6 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>etaxi</title>
     <link rel="stylesheet" href="css/reset.css">
-    <link rel="stylesheet" href="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/styles/choices.min.css"/>
     <link rel="stylesheet" href="css/style.css">
 </head>
 <body>
@@ -48,10 +47,10 @@
                     <div class="header-bottom">
                         <nav class="header-nav">
                             <ul class="header-nav-list">
-                                <li class="header-nav__item"><a class="header-nav__link" href="#catalog">Каталог</a></li>
+                                <li class="header-nav__item"><a class="header-nav__link" href="index.html#catalog">Каталог</a></li>
                                 <li class="header-nav__item"><a class="header-nav__link" href="pageAboutUs.html">О нас</a></li>
-                                <li class="header-nav__item"><a class="header-nav__link" href="#rent">Условия аренды</a></li>
-                                <li class="header-nav__item"><a class="header-nav__link" href="#reviews">Отзывы</a></li>
+                                <li class="header-nav__item"><a class="header-nav__link" href="index.html#rent">Условия аренды</a></li>
+                                <li class="header-nav__item"><a class="header-nav__link" href="index.html#reviews">Отзывы</a></li>
                                 <li class="header-nav__item"><a class="header-nav__link" href="#contacts">Контакты</a></li>
                             </ul>
                         </nav>
@@ -70,20 +69,30 @@
             <h3 class="application-text">Первый день аренды авто бесплатно!</h3>
             <input class="application-input" type="text" name="name" placeholder="Ваше имя" required></input>
             <input class="application-input" type="tel" name="tel" placeholder="+7 (999) 999-99-99" required></input>
-            <select class="main-select" name="city">
-                <option value="" selected>Выберите город</option>
-                <option value="Irkutsk">Иркутск</option>
-                <option value="Barnaul">Барнаул</option>
-                <option value="Ekaterinburg">Екатеринбург</option>
-                <option value="Kemerovo">Кемерово</option>
-                <option value="Krasnoiarsk">Красноярск</option>
-                <option value="Novosibirsk">Новосибирск</option>
-                <option value="Novokuznetsk">Новокузнецк</option>
-                <option value="Omsk">Омск</option>
-                <option value="Tomsk">Томск</option>
-                <option value="Tiumen">Тюмень</option>
-                <option value="Ulan-Ude">Улан-Удэ</option>
-            </select>
+            <div class="dropDown-main">
+                <div class="dropDown-main-selectCity">
+                  <input class="dropDown-main-city" placeholder="Выберите город"></input>
+                  <figure class="dropDown-main-img-down">
+                    <img src="img/dropDown_Down.svg" alt="expand more">
+                  </figure>
+                  <figure class="dropDown-main-img-up">
+                    <img src="img/dropDown_Up.svg" alt="expand more">
+                  </figure>
+                </div>
+                <div class="dropDown-main-list">
+                        <div class="dropDown-main__item">Иркутск</div>
+                        <div class="dropDown-main__item">Барнаул</div>
+                        <div class="dropDown-main__item">Екатеринбург</div>
+                        <div class="dropDown-main__item">Кемерово</div>
+                        <div class="dropDown-main__item">Красноярск</div>
+                        <div class="dropDown-main__item">Новосибирск</div>
+                        <div class="dropDown-main__item">Новокузнецк</div>
+                        <div class="dropDown-main__item">Омск</div>
+                        <div class="dropDown-main__item">Томск</div>
+                        <div class="dropDown-main__item">Тюмень</div>
+                        <div class="dropDown-main__item">Улан-Удэ</div>
+                </div>
+            </div>
             <button class="button application-button">Оставить заявку</button>
             <div class="application-checkbox">
                 <input class="custom-checkbox" type="checkbox" id="confirmation" name="confirmation"/>
@@ -689,7 +698,6 @@
           </div>
         </div>
     </footer>
-    <script src="https://cdn.jsdelivr.net/npm/choices.js@9.0.1/public/assets/scripts/choices.min.js"></script>
     <script src="app.js"></script>
     <script src="videoSlider.js"></script>
 </body>

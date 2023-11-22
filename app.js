@@ -1,46 +1,114 @@
-/*Кастомный селект*/
-const element = document.querySelector(".main-select");
-const choices = new Choices(element, {
-    searchEnabled: false,
-    itemSelectText: "",
-    noResultsText: 'По Вашему запросу ничего не найдено',
+/*Закрытие формы по клику на фон*/
+document.addEventListener('click', (e) => {
+  const click1 = e.composedPath().includes(applicationForm);
+  const click2 = e.composedPath().includes(showButtonMain);
+  const click3 = e.composedPath().includes(showButtonHeader);
+  const click4 = e.composedPath().includes(falseButton);
+  const click5 = e.composedPath().includes(popUp);
+
+  if ( !click1 && !click2 && !click3 && !click4 && !click5) {
+    header.style.backgroundColor =  '#FFF';
+    body.style.backgroundColor =  '#FFF';
+    applicationForm.style.display = 'none';
+    body.style.overflow = 'auto';
+    dropDownCloseMain.style.display = "none";
+    dropDownOpenMain.style.display = "block";
+    dropDownListMain.style.display = "none";
+    applicationButton.style.display = "block";
+    applicationCheckbox.style.display = "block";
+    headerCity.innerHTML = popUpCity.value;
+    popUp.style.display = "none";
+    yourCity.innerHTML = popUpCity.value;
+
+    if (headerCity.innerHTML === '') {
+      headerCity.innerHTML = 'Иркутск';
+      yourCity.innerHTML = 'Иркутск';
+    }
+  }
 })
 
+const popUp = document.querySelector(".popUp");
 
-/*Show-hidden mainForm*/
+/*Главная форма "Оставить заявку" на главной странице*/
+const body = document.querySelector("body");
 const showButtonHeader = document.querySelector(".header-nav__button");
 const showButtonMain = document.querySelector(".main__button");
+const applicationForm = document.querySelector(".application-form")
 const closeButton = document.querySelector(".application-close");
-const applicationForm = document.querySelector(".application-form");
-const body = document.querySelector("body");
 const header = document.querySelector("#header-section");
 
-showButtonMain.addEventListener("click", showForm)
 showButtonHeader.addEventListener("click", showForm)
+showButtonMain.addEventListener("click", showForm)
 
 function showForm() {
-  header.style.position = "relative";
-  header.style.backgroundColor =  'rgba(0, 0, 0, 0.01)';
-  body.style.backgroundColor =  'rgba(0, 0, 0, 0.1)';
+  body.style.overflow =  'hidden'; // заперт фоновой прокрутки
+  header.style.backgroundColor =  'rgb(245,245,245)';
+  body.style.backgroundColor =  'rgba(0, 0, 0, 0.05)';
   applicationForm.style.display = "flex";
 }
 
 closeButton.addEventListener("click", hiddenForm)
 
 function hiddenForm() {
-  header.style.position = "sticky";
+  body.style.overflow =  'auto';
   header.style.backgroundColor =  '#FFF';
   body.style.backgroundColor =  '#FFF';
   applicationForm.style.display = "none";
 }
 
 
-/*Show-hidden cityForm*/
+/*Показать/скрыть dropDown в форме заявки*/
+const dropDownOpenMain = document.querySelector(".dropDown-main-img-down");
+const dropDownCloseMain = document.querySelector(".dropDown-main-img-up");
+const dropDownListMain = document.querySelector(".dropDown-main-list");
+const dropDownSelectCityMain = document.querySelector(".dropDown-main-selectCity");
+const applicationButton = document.querySelector(".application-button");
+const applicationCheckbox = document.querySelector(".application-checkbox");
+
+
+dropDownOpenMain.addEventListener("click",openDropDown)
+
+function openDropDown() {
+  applicationButton.style.display = "none";
+  applicationCheckbox.style.display = "none";
+  dropDownOpenMain.style.display = "none";
+  dropDownCloseMain.style.display = "block";
+  dropDownListMain.style.display = "block";
+  dropDownSelectCityMain.style.border = "1px solid #FDB913";
+}
+
+dropDownCloseMain.addEventListener("click",closeDropDown)
+
+function closeDropDown() {
+  applicationButton.style.display = "block";
+  applicationCheckbox.style.display = "block";
+  dropDownCloseMain.style.display = "none";
+  dropDownOpenMain.style.display = "block";
+  dropDownListMain.style.display = "none";
+  dropDownSelectCityMain.style.border = "1px solid #CBCCCE";
+}
+
+/*Извлечение города в dropDown*/
+const dropDownCityMain = document.querySelector(".dropDown-main-city");
+dropDownListMain.addEventListener("click", (e) => {
+    let content = e.target.innerHTML;
+    dropDownCityMain.value = content;
+    dropDownCloseMain.style.display = "none";
+    dropDownOpenMain.style.display = "block";
+    dropDownListMain.style.display = "none";
+    applicationButton.style.display = "block";
+    applicationCheckbox.style.display = "block";
+  });
+
+
+/*Показать/скрыть форму для выбора города*/
 const showExpand = document.querySelector(".header-expandMore");
 const showCity = document.querySelector(".header-city");
 const actualCity = document.querySelector(".actual-city");
 const trueButton = document.querySelector(".actual-city__button--yellow");
 const falseButton = document.querySelector(".actual-city__button--white");
+const yourCity = document.querySelector(".your-city");
+
 
 showExpand.addEventListener("click",showSlectCity)
 showCity.addEventListener("click",showSlectCity)
@@ -57,14 +125,13 @@ function closeSlectCity() {
   actualCity.style.display = "none";
 }
 
-/*Show-hidden popUp*/
-const popUp = document.querySelector(".popUp");
-
+/*Показать/скрыть popUp*/
 function showPopUp() {
+  body.style.overflow =  'hidden';
+  body.style.backgroundColor = 'red';
   popUp.style.display = "block";
-  header.style.position = "relative";
-  header.style.backgroundColor =  'rgba(0, 0, 0, 0.01)';
-  body.style.backgroundColor =  'rgba(0, 0, 0, 0.1)';
+  header.style.backgroundColor = 'rgb(245,245,245)';
+  body.style.backgroundColor =  'rgba(0, 0, 0, 0.05)';
 }
 
 const popUpClose = document.querySelector(".popUp-close");
@@ -72,20 +139,20 @@ const popUpClose = document.querySelector(".popUp-close");
 popUpClose.addEventListener("click",closePopUp)
 
 function closePopUp() {
+  body.style.overflow =  'auto';
   popUp.style.display = "none";
-  header.style.position = "sticky";
   header.style.backgroundColor =  '#FFF';
   body.style.backgroundColor =  '#FFF';
   headerCity.innerHTML = popUpCity.value;
+  yourCity.innerHTML = popUpCity.value;
 }
-
 
 /*Извлечение города в popUp*/
 const headerCity = document.querySelector('.header-city')
 const popUpCity = document.querySelector('.popUp-city')
 const popUpList = document.querySelector('.popUp-list').addEventListener('click', e => {
-let content = e.target.innerHTML;
-popUpCity.value = content;
+let content2 = e.target.innerHTML;
+popUpCity.value = content2;
 });
 
 
@@ -105,9 +172,9 @@ function toggleStateVideo() {
 const gap = 16;
 
 const carousel = document.getElementById("carousel"),
-  content = document.getElementById("review-text__slider-container"),
-  next = document.getElementById("next-button"),
-  prev = document.getElementById("prev-button");
+      content = document.getElementById("review-text__slider-container"),
+      next = document.getElementById("next-button"),
+      prev = document.getElementById("prev-button");
 
   next.addEventListener("click", e => {
     carousel.scrollBy(width + gap, 0);
@@ -120,5 +187,8 @@ const carousel = document.getElementById("carousel"),
 
 let width = carousel.offsetWidth;
 window.addEventListener("resize", e => (width = carousel.offsetWidth));
+
+
+
 
 
